@@ -18,6 +18,9 @@ namespace GalleryApp.Droid
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            _ = new Boostrapper();
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -26,7 +29,7 @@ namespace GalleryApp.Droid
 
             if (requestCode == 33)
             {
-                var importer = (PhotoImporter)DependencyService.Resolve<IPhotoImporter>();
+                var importer = (PhotoImporter)Resolver.Resolve<IPhotoImporter>();
                 importer.ContinueWithPermission(grantResults[0] == Permission.Granted);
             }
 

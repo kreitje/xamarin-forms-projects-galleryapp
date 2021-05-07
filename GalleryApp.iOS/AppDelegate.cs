@@ -22,7 +22,9 @@ namespace GalleryApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            _ = new Bootstrapper();
             global::Xamarin.Forms.Forms.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
