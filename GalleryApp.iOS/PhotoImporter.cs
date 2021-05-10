@@ -116,7 +116,6 @@ namespace GalleryApp.iOS
                             Bytes = bytes,
                             Filename = filename
                         };
-
                         photos.Add(photo);
                     }
                 }

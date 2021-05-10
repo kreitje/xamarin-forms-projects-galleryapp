@@ -14,7 +14,7 @@ namespace GalleryApp
         public Boostrapper()
         {
             Initialize();
-            FinishInitilization();
+            FinishInitialization();
         }
 
         protected virtual void Initialize()
@@ -33,6 +33,8 @@ namespace GalleryApp
             {
                 ContainerBuilder.RegisterType(type.AsType());
             }
+
+            ContainerBuilder.RegisterType<FormsLocalStorage>().As<ILocalStorage>();
         }
 
         private void FinishInitialization()
